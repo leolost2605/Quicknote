@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=quicknote
+Exec=quicknote
+Icon=io.github.leolost2605.quicknote
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

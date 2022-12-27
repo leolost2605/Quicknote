@@ -1,0 +1,6 @@
+data/io.github.leolost2605.quicknote.desktop.in
+data/io.github.leolost2605.quicknote.appdata.xml.in
+data/io.github.leolost2605.quicknote.gschema.xml
+src/main.vala
+src/window.vala
+src/window.ui

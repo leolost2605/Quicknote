@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="QuicknoteToolbar" parent="GtkBox"/>
+    <property name="orientation">horizontal</property>
+    <child>
+      <object class="GtkButton" id="bold">
+        <property name="label">_(Bold)</property>
+      </object>
+    </child>
+</interface>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/github/leolost2605/quicknote">
+    <file preprocess="xml-stripblanks">ui/window.ui</file>
+    <file preprocess="xml-stripblanks">ui/gtk/help-overlay.ui</file>
+    <file preprocess="xml-stripblanks">ui/note-window.ui</file>
+    <file preprocess="xml-stripblanks">note-widgets/toolbar/toolbar.ui</file>
+  </gresource>
+</gresources>
