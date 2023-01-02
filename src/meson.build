@@ -2,7 +2,8 @@ quicknote_sources = [
   'main.vala',
   'application.vala',
   'window.vala',
-  'note-window.vala',
+  'note-model-item.vala',
+  'note-window/note-window.vala',
   'note-widgets/toolbar/toolbar.vala',
   'note-widgets/note.vala',
   'note-widgets/parser.vala'

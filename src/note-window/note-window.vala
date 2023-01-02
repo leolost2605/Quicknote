@@ -1,5 +1,5 @@
 namespace Quicknote {
-    [GtkTemplate (ui="/io/github/leolost2605/quicknote/ui/note-window.ui")]
+    [GtkTemplate (ui="/io/github/leolost2605/quicknote/note-window/note-window.ui")]
     public class Notewindow : Adw.ApplicationWindow {
         [GtkChild] public unowned Gtk.Box viewbox;
         [GtkChild] public unowned Gtk.Entry titleentry;
