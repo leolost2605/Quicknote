@@ -5,5 +5,6 @@
     <file preprocess="xml-stripblanks">ui/gtk/help-overlay.ui</file>
     <file preprocess="xml-stripblanks">ui/note-window.ui</file>
     <file preprocess="xml-stripblanks">note-widgets/toolbar/toolbar.ui</file>
+    <file preprocess="xml-stripblanks">note-widgets/note.ui</file>
   </gresource>
 </gresources>

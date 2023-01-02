@@ -5,9 +5,55 @@
   <template class="QuicknoteToolbar" parent="GtkBox">
     <property name="orientation">horizontal</property>
     <child>
-      <object class="GtkButton" id="bold">
-        <property name="label">Bold</property>
+      <object class="GtkToggleButton" id="bold">
+        <property name="icon-name">format-text-bold-symbolic</property>
+        <property name="margin-start">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-top">5</property>
+        <property name="margin-bottom">5</property>
+        <style>
+          <class name="flat"/>
+        </style>
       </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="italic">
+        <property name="icon-name">format-text-italic-symbolic</property>
+        <property name="margin-start">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-top">5</property>
+        <property name="margin-bottom">5</property>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="strikethrough">
+        <property name="icon-name">format-text-strikethrough-symbolic</property>
+        <property name="margin-start">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-top">5</property>
+        <property name="margin-bottom">5</property>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="highlight">
+        <property name="icon-name">placeholder</property>
+        <property name="margin-start">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-top">5</property>
+        <property name="margin-bottom">5</property>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator"/>
     </child>
   </template>
 </interface>

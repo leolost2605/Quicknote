@@ -20,8 +20,14 @@
 
 namespace Quicknote {
     public class Application : Adw.Application {
+        bool noteonly = false;
+
         public Application () {
             Object (application_id: "io.github.leolost2605.quicknote", flags: ApplicationFlags.FLAGS_NONE);
+
+            var options = new OptionEntry[1];
+            options[0] = {"note-only", '\0', OptionFlags.NONE, OptionArg.NONE, ref noteonly, "Launches only a note", null};
+            this.add_main_option_entries(options);
         }
 
         construct {
@@ -37,11 +43,15 @@ namespace Quicknote {
         public override void activate () {
             base.activate ();
             var win = this.active_window;
-            if (win == null) {
+            if (win == null && noteonly) {
+                win = new Quicknote.Notewindow (this);
+            } else if (win == null) {
                 win = new Quicknote.Window (this);
             }
             win.present ();
         }
+
+
 
         private void on_about_action () {
             string[] developers = { "Leonhard Kargl" };

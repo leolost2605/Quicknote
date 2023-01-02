@@ -3,7 +3,9 @@ quicknote_sources = [
   'application.vala',
   'window.vala',
   'note-window.vala',
-  'note-widgets/toolbar/toolbar.vala'
+  'note-widgets/toolbar/toolbar.vala',
+  'note-widgets/note.vala',
+  'note-widgets/parser.vala'
 ]
 
 quicknote_deps = [

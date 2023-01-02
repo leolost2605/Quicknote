@@ -19,6 +19,7 @@
  */
 
 int main (string[] args) {
+    print(args[1]);
     var app = new Quicknote.Application ();
     return app.run (args);
 }
