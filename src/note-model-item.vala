@@ -4,6 +4,7 @@ namespace Quicknote {
         public Gtk.TextBuffer content;
         public NoteItem (string t) {
             title = t;
+            content = new Gtk.TextBuffer (null);
         }
     }
 }

@@ -24,6 +24,7 @@ namespace Quicknote {
         [GtkChild] private unowned Gtk.Button opennote;
         [GtkChild] private unowned Gtk.ScrolledWindow gridviewscrolledwindow;
         public Gtk.GridView gridview;
+        public List<Quicknote.NoteItem> notes = new List<Quicknote.NoteItem> ();
 
         
         public Window (Gtk.Application app) {
@@ -36,6 +37,7 @@ namespace Quicknote {
 
             //load_notes_into_flowbox();
             create_gridview_ui ();
+            load_notes_from_files ();
 
             opennote.clicked.connect (() => {
                 var note = new Quicknote.Notewindow(app);
@@ -82,11 +84,53 @@ namespace Quicknote {
             Type type = typeof(Quicknote.NoteItem);
             var model = new ListStore(type);
 
-            var item = new NoteItem("i am an item label");
-            model.append(item);
-            model.append(item);
+            load_notes_from_files ();
+            notes.@foreach ((item) => {
+                model.append(item);
+            });
 
             return model;
+        }
+
+        public void load_notes_from_files () {
+            File dir = File.new_for_path(Environment.get_user_data_dir () + "/quicknote/notes");
+
+            if(!dir.query_exists()) {
+                try {
+                    dir.make_directory_with_parents ();
+                } catch (Error e) {
+                    print(e.message);
+                }
+            } else {
+                try {
+                    var enumerator = dir.enumerate_children ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
+                    FileInfo info;
+                    while ((info = enumerator.next_file()) != null) {
+                        print(info.get_name());
+                        File file = dir.get_child(info.get_name());
+                        notes.append(read_note_from_file(file));
+                        print(file.get_path());
+                    }
+                } catch (Error e) {
+                    print(e.message);
+                }
+            }
+        }
+
+        public NoteItem read_note_from_file (File file) {
+            var item = new Quicknote.NoteItem (file.get_basename());
+            uint8[] content;
+            string etag_out;
+            try {
+                file.load_contents(null, out content, out etag_out);
+            } catch (Error e) {
+                print(e.message);
+                item.content.set_text ("Error: Could not load note");
+                return item;
+            }
+            var parser = new Parser ();
+            parser.string_to_textbuffer_with_tags ((string) content, ref item.content);
+            return item;
         }
     }
 }
