@@ -1,12 +1,15 @@
 quicknote_sources = [
   'main.vala',
   'application.vala',
-  'window.vala',
-  'note-model-item.vala',
+  'note-manager/window.vala',
   'note-window/note-window.vala',
   'note-widgets/toolbar/toolbar.vala',
-  'note-widgets/note.vala',
-  'note-widgets/parser.vala'
+  'lib/note.vala',
+  'note-widgets/note-with-toolbar.vala',
+  'lib/parser.vala',
+  'lib/notebook.vala',
+  'note-manager/notebook-page/notebook-page.vala',
+  'note-manager/note-viewer/note-viewer.vala'
 ]
 
 quicknote_deps = [

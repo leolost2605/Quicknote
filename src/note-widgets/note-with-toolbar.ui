@@ -2,11 +2,15 @@
   <interface>
     <requires lib="gtk" version="4.0"/>
     <requires lib="Adw" version="1.0"/>
-    <template class="QuicknoteNote" parent="GtkBox">
+    <template class="QuicknoteNoteWithToolbar" parent="GtkBox">
       <property name="orientation">vertical</property>
       <property name="hexpand">true</property>
       <property name="vexpand">true</property>
       <child>
+        <object class="GtkScrolledWindow">
+      <property name="hexpand">true</property>
+      <property name="vexpand">true</property>
+          <child>
           <object class="GtkTextView" id="textview">
             <property name="hexpand">true</property>
             <property name="vexpand">true</property>
@@ -14,10 +18,9 @@
             <property name="right_margin">20</property>
             <property name="bottom_margin">20</property>
             <property name="wrap-mode">word-char</property>
-            <style>
-              <class name="transparenttextview"/>
-            </style>
           </object>
+        </child>
+        </object>
       </child>
       <child>
         <object class="GtkSeparator">

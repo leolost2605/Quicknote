@@ -57,7 +57,7 @@ namespace Quicknote {
             string[] developers = { "Leonhard Kargl" };
             var about = new Adw.AboutWindow () {
                 transient_for = this.active_window,
-                application_name = "quicknote",
+                application_name = "Quicknote",
                 application_icon = "io.github.leolost2605.quicknote",
                 developer_name = "Leonhard Kargl",
                 version = "0.1.0",

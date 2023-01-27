@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/github/leolost2605/quicknote">
-    <file preprocess="xml-stripblanks">window.ui</file>
+    <file preprocess="xml-stripblanks">note-manager/window.ui</file>
+    <file preprocess="xml-stripblanks">note-manager/notebook-page/notebook-page.ui</file>
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
     <file preprocess="xml-stripblanks">note-window/note-window.ui</file>
     <file preprocess="xml-stripblanks">note-widgets/toolbar/toolbar.ui</file>
-    <file preprocess="xml-stripblanks">note-widgets/note.ui</file>
-    <file preprocess="xml-stripblanks">note-cell.ui</file>
+    <file preprocess="xml-stripblanks">note-widgets/note-with-toolbar.ui</file>
+    <file preprocess="xml-stripblanks">note-manager/notebookchooser-cell.ui</file>
+    <file preprocess="xml-stripblanks">note-manager/note-viewer/note-viewer.ui</file>
   </gresource>
 </gresources>

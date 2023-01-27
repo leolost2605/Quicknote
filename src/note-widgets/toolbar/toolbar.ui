@@ -4,6 +4,9 @@
   <requires lib="Adw" version="1.0"/>
   <template class="QuicknoteToolbar" parent="GtkBox">
     <property name="orientation">horizontal</property>
+    <style>
+      <class name="customborder"/>
+    </style>
     <child>
       <object class="GtkToggleButton" id="bold">
         <property name="icon-name">format-text-bold-symbolic</property>

@@ -8,7 +8,6 @@ namespace Quicknote {
         [GtkChild] public unowned Gtk.ToggleButton italic;
 
         public Toolbar () {
-
         }
     }
 }
