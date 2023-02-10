@@ -3,7 +3,7 @@ namespace Quicknote {
     public class NoteViewer : Gtk.Box {
         [GtkChild] public unowned Gtk.Button backbutton;
 
-        public signal void back_clicked (Quicknote.Note n);
+        public signal void back_clicked ();
 
         public NoteViewer (Quicknote.Note note) {
             var notewithtoolbar = new Quicknote.NoteWithToolbar(note);
@@ -13,8 +13,9 @@ namespace Quicknote {
             notewithtoolbar.textview.bottom_margin = 40;
             this.append(notewithtoolbar);
             backbutton.clicked.connect (() => {
-                back_clicked(note);
+                back_clicked();
             });
         }
     }
 }
+

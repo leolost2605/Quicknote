@@ -48,8 +48,8 @@ namespace Quicknote {
                     var tempnoteviewer = new Quicknote.NoteViewer(note);
                     leaflet.append(tempnoteviewer);
                     leaflet.set_visible_child(tempnoteviewer);
-                    tempnoteviewer.back_clicked.connect((editednote) => {
-                        tempnotebookpage.close_note(editednote);
+                    tempnoteviewer.back_clicked.connect(() => {
+                        tempnotebookpage.close_note();
                         leaflet.set_visible_child(mainviewbox);
                     });
                 });
@@ -146,3 +146,4 @@ namespace Quicknote {
         }
     }
 }
+

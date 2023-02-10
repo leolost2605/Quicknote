@@ -31,6 +31,29 @@ namespace Quicknote {
             //note.load_note("Untitled note");
         }
 
+        public NoteWithToolbar.refnote (ref Quicknote.Note n) {
+            note = n;
+
+            textview.set_buffer(note.textbuffer);
+            note.textbuffer.mark_set.connect (() => {
+                check_buttons();
+            });
+            toolbar.bold.toggled.connect (() => {
+                note.apply_tag("bold");
+            });
+            toolbar.strikethrough.toggled.connect (() => {
+                note.apply_tag("strikethrough");
+            });
+            toolbar.italic.toggled.connect (() => {
+                note.apply_tag("italic");
+            });
+            toolbar.highlight.toggled.connect (() => {
+                note.apply_tag("highlight");
+            });
+            //textbuffer.create_tag("underline", underline: SINGLE);
+            //note.load_note("Untitled note");
+        }
+
         public void check_buttons () {
             bool bold = false;
             bool italic = false;

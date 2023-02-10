@@ -3,6 +3,7 @@ namespace Quicknote {
     public class NotebookPage : Gtk.Box {
         [GtkChild] private unowned Gtk.ListBox firstsectionlistbox;
         public Quicknote.Notebook notebook;
+        public Note current_note;
 
         public NotebookPage (Quicknote.Notebook n) {
             notebook = n;
@@ -25,13 +26,14 @@ namespace Quicknote {
                 notebook.notes.@foreach ((item)=> {
                     if(item.title == row.name) {
                         note_opened (item);
+                        current_note = item;
                     }
                 });
             });
         }
 
-        public void close_note (Quicknote.Note editednote) {
-            editednote.save_note (notebook.path, editednote.title);
+        public void close_note () {
+            current_note.save_note (notebook.path, current_note.title);
         }
     }
 }
